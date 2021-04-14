@@ -5,17 +5,10 @@
 チケットの開始日、期日、予定工数、作業時間を利用してEVM値の計算とチャートを表示する機能を提供しています。期日が入力されず、バージョンの期日がある場合は、期日としてバージョンの期日を利用します。
 
 # バージョン
-5.4.0
+5.5.1
 
 # 動作環境
 Redmine 4.0.0 以上
-
-> *Highchartのグラフ表示が好きな方へ*
->
-> Version5.0からChart.jsを使ってグラフの表示を行っています。
-> Highchartsのグラフ表示が好きな方は下記のバージョンをお使いください。
->
-> https://github.com/momibun926/redmine_issue_evm/releases/tag/4.6
 
 > *redmine3.4.xをお使いの方へ*
 >
@@ -31,12 +24,13 @@ Redmine 4.0.0 以上
   * 親チケット別
   * トラッカー別
   * 日毎の進捗率を基にしたEVの計算
+  * 日毎のEAC
 * プロジェクトの基礎情報の表示
   * 期間
   * ステータス
   * プロジェクト期日までの日数
   * 計算対象となっているチケットの件数
-  * ベースラインとの差異
+  * ベースラインとの差異とそのチケットのリスト
   * バージョン、担当者別、トラッカー別のチケット件数
   * EVM(PV,EV,AC)のチャート表示。予測のチャートはプロジェクトが完了すると表示されません。
 * プラグイン全体の設定管理
@@ -202,9 +196,9 @@ rake redmine:plugins:migrate NAME=redmine_issue_evm VERSION=0
 ![evm sample screenshot](./images/screenshot_common_setting.png "plugin　setting")
 
 # 開発環境
-*  Redmine version                4.1.1.stable.20740
+*  Redmine version                4.2.0.stable.20876
 *  Ruby version                   2.6.5-p114 (2019-10-01) [x86_64-linux]
-*  Rails version                  5.2.4.2
+*  Rails version                  5.2.5
 *  Environment                    production
 *  Database adapter               PostgreSQL
 *  Mailer queue                   ActiveJob::QueueAdapters::AsyncAdapter
